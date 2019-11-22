@@ -77,7 +77,7 @@ inputs:
     opts:
       title: Username or access token to authenticate with to SonarQube
       description: |-
-        This will be the value of `sonar.host.url`
+        This will be the value of `sonar.login`
       is_sensitive: true
       is_required: true
   - sonar_project_key: $SONAR_PROJECT_KEY
@@ -118,6 +118,7 @@ inputs:
   # Debug
   - is_debug: "false"
     opts:
+      category: "Debug"
       title: Print all executed shell commands to a build log?
       description: |-
         Whether trace of shell commands should be printd to a build log.
@@ -126,3 +127,8 @@ inputs:
         * "false" (default)
       is_expand: false
       value_options: ["true", "false"]
+
+outputs:
+  - SONAR_SCANNER_FILE_PATH:
+    opts:
+      title: The path to `SonarScanner.MSBuild.exe` to be used in the MSBuild SonarScanner End step

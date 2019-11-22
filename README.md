@@ -36,9 +36,13 @@ You can specify the next variables to use the step out of the box against SonarC
 - **sonar_project_version**: a version of the project
 - **sonar_project_name**: a name of the analyzed project. This overrides the project name in SonarQube
 
+## Exported Environment variables
+
+- **SONAR_SCANNER_FILE_PATH**: The path to `SonarScanner.MSBuild.exe` to be used in the MSBuild SonarScanner End step
 
 # TODO
 
 1. Wrap optional properties in group
 2. Support `sonar.exclusions`
 3. Add test-results if available from previous steps: `BITRISE_XAMARIN_TEST_RESULT` and `BITRISE_XAMARIN_TEST_FULL_RESULTS_TEXT`
+4. Cache downloaded sonar-scanner files

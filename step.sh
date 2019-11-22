@@ -29,3 +29,5 @@ if [[ ! -z ${sonar_organization} ]]; then
 fi
 
 eval $CMD
+
+envman add --key "SONAR_SCANNER_FILE_PATH" --value "${TEMP_DIR}/SonarScanner.MSBuild.exe"
