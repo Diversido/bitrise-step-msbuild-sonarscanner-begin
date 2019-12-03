@@ -35,6 +35,7 @@ You can specify the next variables to use the step out of the box against SonarC
 - **sonar_organization**: an organization key
 - **sonar_project_version**: a version of the project
 - **sonar_project_name**: a name of the analyzed project. This overrides the project name in SonarQube
+- **sonar_properties**: any other properties separated with new line. `/p` prefix is applied to every property.
 
 ## Exported Environment variables
 

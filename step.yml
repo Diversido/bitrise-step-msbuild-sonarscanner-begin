@@ -114,6 +114,16 @@ inputs:
         Specifies the name of the analyzed project in SonarQube.
         Adding this argument will overwrite the project name in SonarQube if it already exists.
       is_required: false
+  - sonar_properties:
+    opts:
+      title: All other Sonar Scanner Properties
+      description: |-
+        Specifies any other properties. For example:
+        - sonar.exclusions=Tests/**/*,UITests/**/*
+        - sonar.cs.opencover.reportsPaths="path/to/coverage.xml"
+        - sonar.cs.vstest.reportsPaths="path/to/test-results.xml"
+        Separate properties with a new line.
+      is_required: false
 
   # Debug
   - is_debug: "false"

@@ -28,6 +28,13 @@ if [[ ! -z ${sonar_organization} ]]; then
   CMD="${CMD} /o:${sonar_organization}"
 fi
 
+if [[ ! -z ${sonar_properties} ]]; then
+  PROPERTIES=(${sonar_properties})
+  for property in "${PROPERTIES[@]}"; do
+    CMD="${CMD} /d:${property}"
+  done
+fi
+
 eval $CMD
 
 envman add --key "SONAR_SCANNER_FILE_PATH" --value "${TEMP_DIR}/SonarScanner.MSBuild.exe"
